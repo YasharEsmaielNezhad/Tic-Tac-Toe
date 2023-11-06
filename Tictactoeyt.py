@@ -1,5 +1,5 @@
 print("welcome to my TicTacToe game :)  ")
-print("insert numbers like above to fill your place in the board!  ")
+print("insert numbers as below to fill your place in the board!  ")
 print("1 2 3")
 print("4 5 6")
 print("7 8 9")
