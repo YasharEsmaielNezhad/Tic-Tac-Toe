@@ -1,3 +1,5 @@
+import os
+
 print("welcome to my TicTacToe game :)  ")
 print("insert numbers as below to fill your place in the board!  ")
 print("1 2 3")
@@ -5,6 +7,8 @@ print("4 5 6")
 print("7 8 9")
 print ("we are starting with first player 'X!'")
 
+print("press enter to start")
+m=input()
 board = ["-" , "-" , "-",
         "-" , "-" , "-",
         "-" , "-" , "-"]
@@ -19,7 +23,6 @@ def printBoard(board):
     print("---------")
     print (board[6] + " | " +board[7] + " | " +board[8] )
 
-
 #"testttttt"
 def playerInput(board):
     inp = int(input("Enter a number 1-9: "))
@@ -27,6 +30,7 @@ def playerInput(board):
         board[inp-1] = currentplayer
     else:
         print("that spot is already taken by another player!!!")
+    os.system("cls")
 
 def checkHorizontal(board):
     global winner
@@ -72,8 +76,14 @@ def checkTie(board):
 
 def checkWin():
     if checkDiagonaly(board) or checkHorizontal(board) or checkRow(board):
-        gameRunning = False
-        print(f"The Winner Is ==>{winner}!!!!")
+        breakpoint
+        print(f"The Winner Is ==>{winner}!!!!"'break')
+
+                    
+        
+        
+  
+    
 
 
 
@@ -93,6 +103,7 @@ while gameRunning:
     printBoard(board)
     playerInput(board)
     checkWin()
+        
     checkTie(board)
     switchPlayer()
     
