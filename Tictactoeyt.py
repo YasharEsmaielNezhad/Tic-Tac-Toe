@@ -78,8 +78,9 @@ def checkWin():
     if checkDiagonaly(board) or checkHorizontal(board) or checkRow(board):
         breakpoint
         print(f"The Winner Is ==>{winner}!!!!"'break')
-
-                    
+#سلام من این مشکل رو دارم که بعد از برنده شدن بازی نمیتونم برنامه رو ببندم و لست مسیج نشون بده
+#کامند "بریک" رو اینجا بزارم؟ 
+#یا اگه کامند های دیگه یا روش دیگه ای هم برای حل این مسئله هستش بگین بهم ممنون
         
         
   
@@ -102,8 +103,7 @@ def switchPlayer():
 while gameRunning:
     printBoard(board)
     playerInput(board)
-    checkWin()
-        
+    checkWin()       
     checkTie(board)
     switchPlayer()
     
