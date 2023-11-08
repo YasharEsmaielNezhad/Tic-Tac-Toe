@@ -76,7 +76,6 @@ def checkTie(board):
 
 def checkWin():
     if checkDiagonaly(board) or checkHorizontal(board) or checkRow(board):
-        breakpoint
         print(f"The Winner Is ==>{winner}!!!!"'break')
         exit() # this will do it.
 #سلام من این مشکل رو دارم که بعد از برنده شدن بازی نمیتونم برنامه رو ببندم و لست مسیج نشون بده
