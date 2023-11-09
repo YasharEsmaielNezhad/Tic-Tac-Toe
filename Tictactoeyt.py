@@ -1,12 +1,12 @@
 import os
 
+
 print("welcome to my TicTacToe game :)  ")
 print("insert numbers as below to fill your place in the board!  ")
 print("1 2 3")
 print("4 5 6")
 print("7 8 9")
-print ("we are starting with first player 'X!'")
-
+print ("we are starting with first player 'X'!")
 print("press enter to start")
 m=input()
 board = ["-" , "-" , "-",
@@ -16,6 +16,8 @@ currentplayer = "X"
 winner = None
 gameRunning = True
 
+
+
 def printBoard(board):
     print (board[0] + " | " +board[1] + " | " +board[2] )
     print("---------")
@@ -23,14 +25,23 @@ def printBoard(board):
     print("---------")
     print (board[6] + " | " +board[7] + " | " +board[8] )
 
-#"testttttt"
+
+
 def playerInput(board):
     inp = int(input("Enter a number 1-9: "))
+    
     if inp >= 1 and inp <= 9 and board[inp-1] == "-":
         board[inp-1] = currentplayer
+    elif inp != (1,2,3,4,5,6,7,8,9): 
+        os.system("cls")
+        print("Oops!!, you have to insert a number not other characters!!! ")
+            
     else:
         print("that spot is already taken by another player!!!")
-    os.system("cls")
+
+    os.system("cls")    
+
+
 
 def checkHorizontal(board):
     global winner
@@ -45,6 +56,7 @@ def checkHorizontal(board):
         return True
     
 
+
 def checkRow(board):
     global winner
     if board[0] == board[3] == board[6] and board[0] !="-":
@@ -56,7 +68,9 @@ def checkRow(board):
     elif board[2] == board[5] == board[8] and board[2] !="-":
         winner = board[2]
         return True
-    
+
+
+
 def checkDiagonaly(board):
     global winner
     if board[0] == board[4] == board[8] and board[0] !="-":
@@ -65,7 +79,9 @@ def checkDiagonaly(board):
     elif board[2] == board[4] == board[6] and board[2] !="-":
         winner = board[2]
         return True
-    
+
+
+
 def checkTie(board):
     global gameRunning
     if "-" not in board:
@@ -74,14 +90,11 @@ def checkTie(board):
         gameRunning = False
 
 
+
 def checkWin():
     if checkDiagonaly(board) or checkHorizontal(board) or checkRow(board):
-        print(f"The Winner Is ==>{winner}!!!!"'break')
-        exit() # this will do it.
-#سلام من این مشکل رو دارم که بعد از برنده شدن بازی نمیتونم برنامه رو ببندم و لست مسیج نشون بده
-#کامند "بریک" رو اینجا بزارم؟ 
-#یا اگه کامند های دیگه یا روش دیگه ای هم برای حل این مسئله هستش بگین بهم ممنون
-        
+        print(f"The Winner Is ==>{winner}!!!!")
+        exit()
         
 
 
@@ -93,6 +106,7 @@ def switchPlayer():
        currentplayer = "X"    
 
  
+
 while gameRunning:
     printBoard(board)
     playerInput(board)
